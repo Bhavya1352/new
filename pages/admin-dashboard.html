@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - SecureLife Insurance</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .dashboard-card {
+            background: linear-gradient(135deg, #0b4f8a 0%, #12a4d9 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .dashboard-card h3 {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        .dashboard-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        .table-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .badge-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .badge-warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        [dir="rtl"] th, [dir="rtl"] td {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="nav-brand" href="../index.html" aria-label="Go to Home 1">
+                <img src="../images/logo.svg" alt="SecureLife Insurance" class="logo">
+                <span class="brand-name">SecureLife</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#">Home ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html" data-translate="about">About</a></li>
+                <li><a href="contact.html" data-translate="contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="active" data-translate="dashboard">Dashboard ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dashboard.html">User Dashboard</a></li>
+                        <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <a href="get-started.html" class="btn-primary" data-translate="getStarted">Get Started</a>
+                <button class="lang-toggle" id="langToggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero page-hero admin-hero" style="background: linear-gradient(135deg, #7e22ce 0%, #581c87 100%);">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Admin Dashboard:</h1>
+                <p>Supervise platform-wide operations through audit trails, fraud indicators, SLA analytics, and governance checkpoints designed for high-accuracy claim and policy management.</p>
+                <div class="hero-buttons">
+                    <a href="dashboard.html" class="btn-primary">View User Metrics</a>
+                    <a href="contact.html" class="btn-secondary">Escalation Support</a>
+                </div>
+                <div class="hero-highlight-list">
+                    <span>Fraud and anomaly watch</span>
+                    <span>SLA performance control</span>
+                    <span>Compliance-ready audit logs</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../images/network.svg" alt="Admin Control Network">
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="dashboard-section-anchor">
+                <h1 style="margin-bottom: 2rem;">Admin Dashboard</h1>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card" style="background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);">
+                        <h3>Total Active Users</h3>
+                        <div class="value">12,480</div>
+                    </div>
+                    <div class="dashboard-card" style="background: linear-gradient(135deg, #14b8a6 0%, #0f766e 100%);">
+                        <h3>Open Claim Tickets</h3>
+                        <div class="value">184</div>
+                    </div>
+                    <div class="dashboard-card" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);">
+                        <h3>Pending Approvals</h3>
+                        <div class="value">39</div>
+                    </div>
+                    <div class="dashboard-card" style="background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);">
+                        <h3>Fraud Alerts</h3>
+                        <div class="value">7</div>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-header">Admin Work Queue</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ticket ID</th>
+                                <th>Category</th>
+                                <th>Owner</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ADM-3021</td>
+                                <td>KYC Verification</td>
+                                <td>Rachel M.</td>
+                                <td>High</td>
+                                <td><span class="badge badge-warning">In Review</span></td>
+                            </tr>
+                            <tr>
+                                <td>ADM-3022</td>
+                                <td>Policy Escalation</td>
+                                <td>Daniel K.</td>
+                                <td>Medium</td>
+                                <td><span class="badge badge-success">Assigned</span></td>
+                            </tr>
+                            <tr>
+                                <td>ADM-3023</td>
+                                <td>Claim Audit</td>
+                                <td>Nina S.</td>
+                                <td>High</td>
+                                <td><span class="badge badge-warning">Pending Docs</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-band" style="margin-top: 8px;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 12px; color: #1a1a1a;">Operations Insight Summary</h3>
+                    <div class="rich-content-grid">
+                        <div class="rich-card">
+                            <h3>Claim Turnaround Trend</h3>
+                            <p>Average closure time improved from 52 hrs to 39 hrs after routing high-priority tickets via smart queues.</p>
+                        </div>
+                        <div class="rich-card">
+                            <h3>Policy Renewal Health</h3>
+                            <p>Auto-reminder workflows reduced missed renewals by 28% this quarter across user and enterprise accounts.</p>
+                        </div>
+                        <div class="rich-card">
+                            <h3>Fraud Watch Signals</h3>
+                            <p>Cross-policy anomaly scans detected 17 high-risk overlaps, all moved to manual audit before payout.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <section style="margin-top: 28px;">
+                    <h2 style="font-size: 2rem; margin-bottom: 12px;">Admin Intelligence Stack</h2>
+                    <p style="color: #5a6472; margin-bottom: 18px;">A unified monitoring layer for underwriting quality, claim throughput, fraud signals, and compliance SLA tracking.</p>
+                    <div class="rich-content-grid" style="margin-bottom: 22px;">
+                        <div class="rich-card">
+                            <h3>Risk Scoring Engine</h3>
+                            <p>Auto-prioritizes high-impact tickets by combining policy age, claim amount, and anomaly indicators.</p>
+                        </div>
+                        <div class="rich-card">
+                            <h3>Quality Assurance Console</h3>
+                            <p>Audits resolution notes and decision trails to ensure regulatory and internal policy compliance.</p>
+                        </div>
+                        <div class="rich-card">
+                            <h3>Escalation Heatmap</h3>
+                            <p>Identifies teams with rising backlog pressure so workloads can be rebalanced early.</p>
+                        </div>
+                        <div class="rich-card">
+                            <h3>Fraud Correlation Layer</h3>
+                            <p>Cross-links user identity, claim velocity, and duplicate incident signatures across products.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="table-container">
+                    <div class="table-header">Protocol Comparison: Traditional vs SecureLife Ops</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Area</th>
+                                <th>Traditional Workflow</th>
+                                <th>SecureLife Dashboard Workflow</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Claim Triage</td>
+                                <td>Manual inbox sorting</td>
+                                <td>AI-priority scoring with SLA bands</td>
+                            </tr>
+                            <tr>
+                                <td>Fraud Review</td>
+                                <td>Random audit checks</td>
+                                <td>Continuous anomaly and pattern detection</td>
+                            </tr>
+                            <tr>
+                                <td>User Communication</td>
+                                <td>Delayed status callbacks</td>
+                                <td>Real-time dashboard and milestone alerts</td>
+                            </tr>
+                            <tr>
+                                <td>Decision Traceability</td>
+                                <td>Scattered email records</td>
+                                <td>Centralized log with reviewer signatures</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="rich-content-grid">
+                    <div class="rich-card">
+                        <h3>Admin FAQ</h3>
+                        <ul class="rich-list">
+                            <li>How frequently should fraud models be recalibrated? Every 30 days or after major product updates.</li>
+                            <li>What is the escalation threshold? Any high-priority ticket pending beyond 6 working hours.</li>
+                            <li>How to handle repeat documentation failures? Trigger guided checklist + assisted upload support.</li>
+                        </ul>
+                    </div>
+                    <div class="rich-card">
+                        <h3>Monthly Governance Checklist</h3>
+                        <ul class="rich-list">
+                            <li>Review underwriting exceptions and approval overrides</li>
+                            <li>Audit top 25 high-value claim decisions</li>
+                            <li>Validate SLA compliance across all queues</li>
+                            <li>Publish internal service quality scorecard</li>
+                        </ul>
+                    </div>
+                    <div class="rich-card">
+                        <h3>Capacity Planning Notes</h3>
+                        <ul class="rich-list">
+                            <li>Expected claim volume surge during festive period: +18%</li>
+                            <li>Recommended temporary reviewer allocation: +6 analysts</li>
+                            <li>Target automation uplift for Q2: 14% faster triage</li>
+                            <li>Critical queue to monitor: KYC mismatch and policy reinstatement</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="infographic" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Admin Operations Infographic Pipeline</h2>
+            <p class="section-subtitle">Every incoming ticket is routed through a structured engineering workflow for faster, auditable decision-making.</p>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📥</div>
+                    <h3>Intake Layer</h3>
+                    <p>Claims, escalations, and compliance flags are auto-classified by severity and business impact.</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🧠</div>
+                    <h3>Risk Engine</h3>
+                    <p>Anomaly, fraud, and policy mismatch checks run before assignment to analysts.</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">🧪</div>
+                    <h3>QA Validation</h3>
+                    <p>Decision notes are audited against policy wording and regulatory requirements.</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">📢</div>
+                    <h3>Closure Broadcast</h3>
+                    <p>Final status updates are pushed to user dashboard, compliance logs, and internal reports.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <h2 class="section-title">Command Metrics Infographic</h2>
+            <p class="section-subtitle">Operational visibility across speed, quality, risk, and governance efficiency.</p>
+
+            <div class="rich-content-grid" style="margin-bottom: 26px;">
+                <div class="rich-card">
+                    <h3>SLA Compliance Index</h3>
+                    <p style="margin-bottom: 10px;">Monthly target adherence by priority band.</p>
+                    <div style="height: 10px; border-radius: 999px; background: #e5e7eb; overflow: hidden; margin-bottom: 8px;"><div style="width: 92%; height: 100%; background: linear-gradient(90deg, #10b981, #22c55e);"></div></div>
+                    <p style="color: #666; font-size: 0.92rem;">92% achieved, goal for next cycle: 95%</p>
+                </div>
+                <div class="rich-card">
+                    <h3>Fraud Detection Strength</h3>
+                    <p style="margin-bottom: 10px;">Signal confidence based on multi-factor correlation.</p>
+                    <div style="height: 10px; border-radius: 999px; background: #e5e7eb; overflow: hidden; margin-bottom: 8px;"><div style="width: 87%; height: 100%; background: linear-gradient(90deg, #f59e0b, #f97316);"></div></div>
+                    <p style="color: #666; font-size: 0.92rem;">87% confidence, model recalibration scheduled</p>
+                </div>
+                <div class="rich-card">
+                    <h3>Audit Quality Score</h3>
+                    <p style="margin-bottom: 10px;">Decision traceability and reviewer compliance health.</p>
+                    <div style="height: 10px; border-radius: 999px; background: #e5e7eb; overflow: hidden; margin-bottom: 8px;"><div style="width: 90%; height: 100%; background: linear-gradient(90deg, #2563eb, #3b82f6);"></div></div>
+                    <p style="color: #666; font-size: 0.92rem;">90% score, no critical non-compliance this month</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="table-header">Regional Admin Performance Matrix</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Region</th>
+                            <th>Ticket Volume</th>
+                            <th>Avg Resolution</th>
+                            <th>Escalation Rate</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>North Hub</td>
+                            <td>1,240</td>
+                            <td>18 hrs</td>
+                            <td>4.2%</td>
+                            <td><span class="badge badge-success">Stable</span></td>
+                        </tr>
+                        <tr>
+                            <td>West Hub</td>
+                            <td>1,610</td>
+                            <td>22 hrs</td>
+                            <td>5.8%</td>
+                            <td><span class="badge badge-warning">Watchlist</span></td>
+                        </tr>
+                        <tr>
+                            <td>South Hub</td>
+                            <td>1,030</td>
+                            <td>16 hrs</td>
+                            <td>3.1%</td>
+                            <td><span class="badge badge-success">Optimized</span></td>
+                        </tr>
+                        <tr>
+                            <td>Central Hub</td>
+                            <td>1,420</td>
+                            <td>20 hrs</td>
+                            <td>4.9%</td>
+                            <td><span class="badge badge-success">Stable</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="infographic">
+        <div class="container">
+            <h2 class="section-title">Admin Governance Knowledge Base</h2>
+            <p class="section-subtitle">Detailed operational content for policy governance, compliance discipline, and team-level execution quality.</p>
+            <div class="rich-content-grid">
+                <div class="rich-card">
+                    <h3>Escalation Protocols</h3>
+                    <ul class="rich-list">
+                        <li>Critical fraud flags: escalate within 30 minutes</li>
+                        <li>Pending high-value claims: dual-review workflow</li>
+                        <li>Repeated documentation mismatch: assisted user bridge</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>Audit Priorities</h3>
+                    <ul class="rich-list">
+                        <li>Review override-heavy decisions first</li>
+                        <li>Match payout rationale with policy clauses</li>
+                        <li>Validate all reviewer signatures and timestamps</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>Model Governance</h3>
+                    <ul class="rich-list">
+                        <li>Recalibrate risk model every 30 days</li>
+                        <li>Track false positives and pattern drift</li>
+                        <li>Run shadow evaluation before deployment</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>Capacity Scaling Playbook</h3>
+                    <ul class="rich-list">
+                        <li>Move low-severity tickets to batch lane</li>
+                        <li>Activate surge pod during seasonal spikes</li>
+                        <li>Measure queue health every 4-hour cycle</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-translate="company">Company</h4>
+                    <ul>
+                        <li><a href="about.html" data-translate="about">About Us</a></li>
+                        <li><a href="#" data-translate="careers">Careers</a></li>
+                        <li><a href="#" data-translate="press">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="products">Products</h4>
+                    <ul>
+                        <li><a href="#" data-translate="lifeInsurance">Life Insurance</a></li>
+                        <li><a href="#" data-translate="healthInsurance">Health Insurance</a></li>
+                        <li><a href="#" data-translate="autoInsurance">Auto Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="support">Support</h4>
+                    <ul>
+                        <li><a href="contact.html" data-translate="contact">Contact</a></li>
+                        <li><a href="#" data-translate="faq">FAQ</a></li>
+                        <li><a href="#" data-translate="claims">Claims</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="legal">Legal</h4>
+                    <ul>
+                        <li><a href="#" data-translate="privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-translate="terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SecureLife Insurance. <span data-translate="rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

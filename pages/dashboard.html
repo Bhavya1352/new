@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SecureLife Insurance</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .dashboard-card {
+            background: linear-gradient(135deg, #0b4f8a 0%, #12a4d9 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .dashboard-card h3 {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        .dashboard-card .value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        .table-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        th {
+            background: var(--bg-light);
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .badge-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .badge-warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        [dir="rtl"] th, [dir="rtl"] td {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="nav-brand" href="../index.html" aria-label="Go to Home 1">
+                <img src="../images/logo.svg" alt="SecureLife Insurance" class="logo">
+                <span class="brand-name">SecureLife</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#">Home ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html" data-translate="about">About</a></li>
+                <li><a href="contact.html" data-translate="contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" class="active" data-translate="dashboard">Dashboard ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dashboard.html">User Dashboard</a></li>
+                        <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <a href="get-started.html" class="btn-primary" data-translate="getStarted">Get Started</a>
+                <button class="lang-toggle" id="langToggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero page-hero user-hero" style="background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%);">
+        <div class="container">
+            <div class="hero-content">
+                <h1>User Dashboard:</h1>
+                <p>Track active policies, monitor claims in real time, review upcoming payments, and follow personalized insights that help you stay fully protected year-round.</p>
+                <div class="hero-buttons">
+                    <a href="get-started.html" class="btn-primary">Buy New Coverage</a>
+                    <a href="contact.html" class="btn-secondary">Claim Assistance</a>
+                </div>
+                <div class="hero-highlight-list">
+                    <span>Live claim progress tracker</span>
+                    <span>Smart renewal reminders</span>
+                    <span>Policy health analytics</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../images/fast-claims.svg" alt="Fast Claims Dashboard">
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div id="user-dashboard" class="dashboard-section-anchor" style="margin-bottom: 70px;">
+                <h1 style="margin-bottom: 2rem;" data-translate="dashboardTitle">User Dashboard</h1>
+
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3 data-translate="policies">Active Policies</h3>
+                        <div class="value">4</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3 data-translate="totalCoverage">Total Coverage</h3>
+                        <div class="value">$850K</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3 data-translate="nextPayment">Next Payment</h3>
+                        <div class="value">$245</div>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3 data-translate="claimsStatus">Claims Status</h3>
+                        <div class="value">2 <span data-translate="active" style="font-size: 1rem;">Active</span></div>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-header" data-translate="myPolicies">My Policies</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-translate="policyNumber">Policy Number</th>
+                                <th>Type</th>
+                                <th data-translate="coverage">Coverage</th>
+                                <th data-translate="premium">Premium</th>
+                                <th data-translate="status">Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LIF-2024-001</td>
+                                <td data-translate="lifeInsurance">Life Insurance</td>
+                                <td>$500,000</td>
+                                <td>$120/mo</td>
+                                <td><span class="badge badge-success" data-translate="active">Active</span></td>
+                                <td><a href="#" class="service-link" data-translate="viewDetails">View Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>HLT-2024-002</td>
+                                <td data-translate="healthInsurance">Health Insurance</td>
+                                <td>$250,000</td>
+                                <td>$85/mo</td>
+                                <td><span class="badge badge-success" data-translate="active">Active</span></td>
+                                <td><a href="#" class="service-link" data-translate="viewDetails">View Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>AUT-2024-003</td>
+                                <td data-translate="autoInsurance">Auto Insurance</td>
+                                <td>$50,000</td>
+                                <td>$25/mo</td>
+                                <td><span class="badge badge-success" data-translate="active">Active</span></td>
+                                <td><a href="#" class="service-link" data-translate="viewDetails">View Details</a></td>
+                            </tr>
+                            <tr>
+                                <td>HOM-2024-004</td>
+                                <td data-translate="homeInsurance">Home Insurance</td>
+                                <td>$350,000</td>
+                                <td>$65/mo</td>
+                                <td><span class="badge badge-success" data-translate="active">Active</span></td>
+                                <td><a href="#" class="service-link" data-translate="viewDetails">View Details</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-container">
+                    <div class="table-header" data-translate="recentClaims">Recent Claims</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th data-translate="claimId">Claim ID</th>
+                                <th>Type</th>
+                                <th data-translate="date">Date</th>
+                                <th data-translate="amount">Amount</th>
+                                <th data-translate="status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CLM-2024-101</td>
+                                <td data-translate="healthInsurance">Health Insurance</td>
+                                <td>2024-01-15</td>
+                                <td>$2,500</td>
+                                <td><span class="badge badge-success" data-translate="approved">Approved</span></td>
+                            </tr>
+                            <tr>
+                                <td>CLM-2024-102</td>
+                                <td data-translate="autoInsurance">Auto Insurance</td>
+                                <td>2024-01-20</td>
+                                <td>$1,200</td>
+                                <td><span class="badge badge-warning" data-translate="pending">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-band" style="margin-top: 8px; margin-bottom: 22px;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 10px; color: #1a1a1a;">Digital Policy Command Center</h3>
+                    <p style="color: #4a5568; margin-bottom: 12px;">Your dashboard continuously tracks policy health, renewal windows, claim progress, and documentation gaps so you can avoid last-minute surprises.</p>
+                    <div class="rich-content-grid">
+                        <div class="rich-card">
+                            <h3>Coverage Health Index</h3>
+                            <p>Measures protection adequacy based on income, liabilities, and household dependency changes.</p>
+                        </div>
+                        <div class="rich-card">
+                            <h3>Renewal Risk Alerts</h3>
+                            <p>Flags upcoming lapses and recommends actions 30, 15, and 7 days before due dates.</p>
+                        </div>
+                        <div class="rich-card">
+                            <h3>Claim Readiness Check</h3>
+                            <p>Highlights missing documents likely to delay claim settlement before you file.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rich-content-grid" style="margin-bottom: 26px;">
+                    <div class="rich-card">
+                        <h3>Recommended Next Actions</h3>
+                        <ul class="rich-list">
+                            <li>Add dependent health rider before next renewal cycle</li>
+                            <li>Update nominee contact details for all active plans</li>
+                            <li>Download annual premium certificate for tax filing</li>
+                            <li>Schedule preventive health checkup from partner network</li>
+                        </ul>
+                    </div>
+                    <div class="rich-card">
+                        <h3>Upcoming Timeline</h3>
+                        <ul class="rich-list">
+                            <li>Mar 12: Health policy premium due</li>
+                            <li>Mar 19: Vehicle inspection slot available</li>
+                            <li>Apr 02: Home policy annual review</li>
+                            <li>Apr 15: Family portfolio optimization call</li>
+                        </ul>
+                    </div>
+                    <div class="rich-card">
+                        <h3>Smart Insights</h3>
+                        <ul class="rich-list">
+                            <li>Your health cover utilization rose by 11% this quarter</li>
+                            <li>Bundling home + auto can reduce annual premium by 8%</li>
+                            <li>Policy overlap detected in accidental cover section</li>
+                            <li>Term cover may be under-provisioned for current liabilities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="infographic" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">User Protection Journey Infographic</h2>
+            <p class="section-subtitle">From policy selection to claim closure, every milestone is mapped so users know exactly what to do next.</p>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">🧾</div>
+                    <h3>Policy Sync</h3>
+                    <p>All your active plans are auto-grouped by type, premium date, and risk importance.</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🛎️</div>
+                    <h3>Smart Alerts</h3>
+                    <p>Get reminders for renewals, missing documents, and rider opportunities before deadlines.</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📂</div>
+                    <h3>Claim Ready File</h3>
+                    <p>Document checklist verifies what is complete and what may delay settlement.</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-icon">✅</div>
+                    <h3>Fast Resolution</h3>
+                    <p>Live status tracking and dedicated advisor support until payout confirmation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <h2 class="section-title">Coverage Gap Infographic</h2>
+            <p class="section-subtitle">Visual indicators to help users understand where their protection is strong and where upgrades are needed.</p>
+
+            <div class="rich-content-grid" style="margin-bottom: 28px;">
+                <div class="rich-card">
+                    <h3>Life Protection Meter</h3>
+                    <p style="margin-bottom: 10px;">Current adequacy against ideal target.</p>
+                    <div style="height: 10px; border-radius: 999px; background: #e5e7eb; overflow: hidden; margin-bottom: 8px;"><div style="width: 74%; height: 100%; background: linear-gradient(90deg, #10b981, #22c55e);"></div></div>
+                    <p style="color: #666; font-size: 0.92rem;">74% covered, recommended boost: +$180,000</p>
+                </div>
+                <div class="rich-card">
+                    <h3>Health Buffer Meter</h3>
+                    <p style="margin-bottom: 10px;">Out-of-pocket readiness for major hospitalization.</p>
+                    <div style="height: 10px; border-radius: 999px; background: #e5e7eb; overflow: hidden; margin-bottom: 8px;"><div style="width: 61%; height: 100%; background: linear-gradient(90deg, #f59e0b, #fb923c);"></div></div>
+                    <p style="color: #666; font-size: 0.92rem;">61% optimized, top-up recommendation available</p>
+                </div>
+                <div class="rich-card">
+                    <h3>Asset Risk Meter</h3>
+                    <p style="margin-bottom: 10px;">Home and auto protection completeness index.</p>
+                    <div style="height: 10px; border-radius: 999px; background: #e5e7eb; overflow: hidden; margin-bottom: 8px;"><div style="width: 83%; height: 100%; background: linear-gradient(90deg, #2563eb, #3b82f6);"></div></div>
+                    <p style="color: #666; font-size: 0.92rem;">83% covered, add flood rider for full protection</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="table-header">User Infographic Snapshot: 12-Month Plan</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Focus Area</th>
+                            <th>Action</th>
+                            <th>Expected Benefit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Q1</td>
+                            <td>Policy Cleanup</td>
+                            <td>Nominee, KYC, and rider audit</td>
+                            <td>Faster claim initiation</td>
+                        </tr>
+                        <tr>
+                            <td>Q2</td>
+                            <td>Coverage Upgrade</td>
+                            <td>Life and health top-up alignment</td>
+                            <td>Reduced underinsurance risk</td>
+                        </tr>
+                        <tr>
+                            <td>Q3</td>
+                            <td>Asset Protection</td>
+                            <td>Home + auto risk endorsement</td>
+                            <td>Broader incident coverage</td>
+                        </tr>
+                        <tr>
+                            <td>Q4</td>
+                            <td>Renewal Strategy</td>
+                            <td>Premium optimization review</td>
+                            <td>Lower annual policy cost</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="infographic">
+        <div class="container">
+            <h2 class="section-title">Knowledge Deck For Policyholders</h2>
+            <p class="section-subtitle">Content-rich guidance so users make better policy decisions without waiting for support calls.</p>
+            <div class="rich-content-grid">
+                <div class="rich-card">
+                    <h3>When To Raise A Claim</h3>
+                    <ul class="rich-list">
+                        <li>Report within policy notification timeline</li>
+                        <li>Attach clear and timestamped evidence</li>
+                        <li>Keep original bills available for verification</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>How To Avoid Rejections</h3>
+                    <ul class="rich-list">
+                        <li>Disclose medical history completely</li>
+                        <li>Do not miss waiting-period clauses</li>
+                        <li>Match claim category with policy wording</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>Annual Review Formula</h3>
+                    <ul class="rich-list">
+                        <li>Income changed? Recalculate life cover</li>
+                        <li>Family expanded? Increase health buffer</li>
+                        <li>New assets? Update property endorsements</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>Emergency Readiness Kit</h3>
+                    <ul class="rich-list">
+                        <li>One-click policy download folder</li>
+                        <li>Emergency contact and advisor mapping</li>
+                        <li>Hospital and repair network shortlist</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-translate="company">Company</h4>
+                    <ul>
+                        <li><a href="about.html" data-translate="about">About Us</a></li>
+                        <li><a href="#" data-translate="careers">Careers</a></li>
+                        <li><a href="#" data-translate="press">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="products">Products</h4>
+                    <ul>
+                        <li><a href="#" data-translate="lifeInsurance">Life Insurance</a></li>
+                        <li><a href="#" data-translate="healthInsurance">Health Insurance</a></li>
+                        <li><a href="#" data-translate="autoInsurance">Auto Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="support">Support</h4>
+                    <ul>
+                        <li><a href="contact.html" data-translate="contact">Contact</a></li>
+                        <li><a href="#" data-translate="faq">FAQ</a></li>
+                        <li><a href="#" data-translate="claims">Claims</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="legal">Legal</h4>
+                    <ul>
+                        <li><a href="#" data-translate="privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-translate="terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SecureLife Insurance. <span data-translate="rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

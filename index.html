@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureLife Insurance - Your Protection Partner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="nav-brand" href="index.html" aria-label="Go to Home 1">
+                <img src="images/logo.svg" alt="SecureLife Insurance" class="logo">
+                <span class="brand-name">SecureLife</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#" class="active">Home ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home 1</a></li>
+                        <li><a href="pages/home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="pages/about.html" data-translate="about">About</a></li>
+                <li><a href="pages/contact.html" data-translate="contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" data-translate="dashboard">Dashboard ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/dashboard.html">User Dashboard</a></li>
+                        <li><a href="pages/admin-dashboard.html">Admin Dashboard</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <a href="pages/get-started.html" class="btn-primary" data-translate="getStarted">Get Started</a>
+                <button class="lang-toggle" id="langToggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero home1-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-translate="heroTitle">Protect What Matters Most!</h1>
+                <p data-translate="heroSubtitle">Comprehensive insurance solutions, tailored to your needs: Life, Health, Auto, and Home coverage, with 24/7 support.</p>
+                <div class="hero-buttons">
+                    <a href="pages/get-started.html" class="btn-primary" data-translate="getQuote">Get a Quote</a>
+                    <a href="pages/about.html" class="btn-secondary" data-translate="learnMore">Learn More</a>
+                </div>
+                <div class="hero-trust-list" style="display: flex; gap: 30px; margin-top: 30px; align-items: center;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 2rem;">✓</span>
+                        <span>No Hidden Fees</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 2rem;">✓</span>
+                        <span>Instant Coverage</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="font-size: 2rem;">✓</span>
+                        <span>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-insurance.svg" alt="Insurance Protection">
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="padding: 60px 0; background: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 900px; margin: 0 auto 50px;">
+                <h2 class="section-title">Trusted by Leading Organizations</h2>
+                <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 40px; margin-top: 40px; opacity: 0.6;">
+                    <div style="font-size: 2rem; font-weight: bold; color: #0b4f8a;">FORTUNE 500</div>
+                    <div style="font-size: 2rem; font-weight: bold; color: #0b4f8a;">NASDAQ</div>
+                    <div style="font-size: 2rem; font-weight: bold; color: #0b4f8a;">FORBES</div>
+                    <div style="font-size: 2rem; font-weight: bold; color: #0b4f8a;">BLOOMBERG</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stat-card">
+                <div class="stat-number">500K+</div>
+                <div class="stat-label" data-translate="statClients">Happy Clients</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">$2B+</div>
+                <div class="stat-label" data-translate="statClaims">Claims Paid</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">25+</div>
+                <div class="stat-label" data-translate="statYears">Years Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">98%</div>
+                <div class="stat-label" data-translate="statSatisfaction">Satisfaction Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title" data-translate="servicesTitle">Our Insurance Solutions</h2>
+            <p class="section-subtitle" data-translate="servicesSubtitle">Comprehensive coverage for every aspect of your life</p>
+            
+            <!-- Top 3 Cards -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/life-insurance.svg" alt="Life Insurance">
+                    </div>
+                    <h3 data-translate="lifeInsurance">Life Insurance</h3>
+                    <p data-translate="lifeInsuranceDesc">Secure your family's future with comprehensive life coverage plans starting from $50/month.</p>
+                    <a href="pages/get-started.html" class="service-link" data-translate="learnMore">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/health-insurance.svg" alt="Health Insurance">
+                    </div>
+                    <h3 data-translate="healthInsurance">Health Insurance</h3>
+                    <p data-translate="healthInsuranceDesc">Complete medical coverage with access to 10,000+ hospitals and wellness programs.</p>
+                    <a href="pages/get-started.html" class="service-link" data-translate="learnMore">Learn More →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/auto-insurance.svg" alt="Auto Insurance">
+                    </div>
+                    <h3 data-translate="autoInsurance">Auto Insurance</h3>
+                    <p data-translate="autoInsuranceDesc">Drive with confidence. Comprehensive auto coverage with roadside assistance included.</p>
+                    <a href="pages/get-started.html" class="service-link" data-translate="learnMore">Learn More →</a>
+                </div>
+            </div>
+
+            <!-- Featured Bottom Card -->
+            <div class="featured-home-card" style="background: linear-gradient(135deg, #0b4f8a 0%, #12a4d9 100%); border-radius: 25px; padding: 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; box-shadow: 0 20px 60px rgba(8, 74, 127, 0.3); position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+                <div style="position: absolute; bottom: -30px; left: -30px; width: 150px; height: 150px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+                
+                <div style="position: relative; z-index: 1;">
+                    <div style="width: 100px; height: 100px; margin-bottom: 30px;">
+                        <img src="images/home-insurance.svg" alt="Home Insurance" style="width: 100%; height: 100%; filter: brightness(0) invert(1) drop-shadow(0 4px 8px rgba(0,0,0,0.2));">
+                    </div>
+                    <h3 style="font-size: 2.5rem; color: white; margin-bottom: 20px; font-weight: 800;" data-translate="homeInsurance">Home Insurance</h3>
+                    <p style="font-size: 1.2rem; color: rgba(255,255,255,0.95); line-height: 1.8; margin-bottom: 30px;" data-translate="homeInsuranceDesc">Protect your home and belongings against damage, theft, and natural disasters.</p>
+                    <div class="featured-home-stats" style="display: flex; gap: 30px; margin-bottom: 30px;">
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: white;">$2M+</div>
+                            <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Max Coverage</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: white;">24/7</div>
+                            <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Emergency Support</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: white;">100%</div>
+                            <div style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Claim Support</div>
+                        </div>
+                    </div>
+                    <a href="pages/get-started.html" class="btn-secondary" style="display: inline-block; padding: 15px 35px; font-size: 1.1rem;" data-translate="getQuote">Get a Quote</a>
+                </div>
+                
+                <div style="position: relative; z-index: 1;">
+                    <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; border: 2px solid rgba(255,255,255,0.2);">
+                        <h4 style="color: white; font-size: 1.5rem; margin-bottom: 25px; font-weight: 700;">What's Covered?</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="color: white; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; gap: 15px;">
+                                <span style="font-size: 1.5rem;">✓</span>
+                                <span style="font-size: 1.05rem;">Fire & Natural Disasters</span>
+                            </li>
+                            <li style="color: white; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; gap: 15px;">
+                                <span style="font-size: 1.5rem;">✓</span>
+                                <span style="font-size: 1.05rem;">Theft & Burglary Protection</span>
+                            </li>
+                            <li style="color: white; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; gap: 15px;">
+                                <span style="font-size: 1.5rem;">✓</span>
+                                <span style="font-size: 1.05rem;">Personal Liability Coverage</span>
+                            </li>
+                            <li style="color: white; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; gap: 15px;">
+                                <span style="font-size: 1.5rem;">✓</span>
+                                <span style="font-size: 1.05rem;">Temporary Living Expenses</span>
+                            </li>
+                            <li style="color: white; padding: 15px 0; display: flex; align-items: center; gap: 15px;">
+                                <span style="font-size: 1.5rem;">✓</span>
+                                <span style="font-size: 1.05rem;">Valuable Items Protection</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="infographic">
+        <div class="container">
+            <h2 class="section-title" data-translate="howItWorks">How It Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📋</div>
+                    <h3 data-translate="step1Title">Choose Your Plan</h3>
+                    <p data-translate="step1Desc">Select from our range of insurance products that fit your needs</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">💰</div>
+                    <h3 data-translate="step2Title">Get Instant Quote</h3>
+                    <p data-translate="step2Desc">Receive personalized pricing in minutes with no hidden fees</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">✅</div>
+                    <h3 data-translate="step3Title">Get Protected</h3>
+                    <p data-translate="step3Desc">Complete simple paperwork and enjoy instant coverage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Why Choose SecureLife Insurance?</h2>
+            <p class="section-subtitle">We provide more than just insurance - we provide peace of mind</p>
+            <div class="cards-two-two" style="margin-top: 50px;">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/award-icon.svg" alt="Award Winning">
+                    </div>
+                    <h3>Dedicated Claim Coach</h3>
+                    <p>Each policy gets a personal claim coach who guides you from first report to final settlement.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/secure-icon.svg" alt="Secure">
+                    </div>
+                    <h3>Fraud Shield Monitoring</h3>
+                    <p>Real-time risk checks flag suspicious activity early so your profile and claims stay protected.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/flexible-icon.svg" alt="Flexible">
+                    </div>
+                    <h3>Smart Premium Reminders</h3>
+                    <p>WhatsApp, email, and app alerts keep you on track with payment windows and renewal dates.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="images/global-icon.svg" alt="Global">
+                    </div>
+                    <h3>Emergency Concierge Desk</h3>
+                    <p>Need urgent roadside, medical, or home help? One hotline connects you to verified partners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="infographic" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Customer Testimonials</h2>
+            <p class="section-subtitle">See what our customers say about us</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-left: 4px solid #0b4f8a;">
+                    <div style="color: #ffa000; font-size: 2rem; margin-bottom: 15px;">★★★★★</div>
+                    <p style="font-style: italic; color: #666; margin-bottom: 20px; line-height: 1.8;">"SecureLife made the entire process so easy. Got my policy approved in just 2 hours. Highly recommended!"</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #0b4f8a 0%, #12a4d9 100%);"></div>
+                        <div>
+                            <div style="font-weight: bold; color: #1a1a1a;">Sarah Johnson</div>
+                            <div style="color: #999; font-size: 0.9rem;">Business Owner</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-left: 4px solid #0b4f8a;">
+                    <div style="color: #ffa000; font-size: 2rem; margin-bottom: 15px;">★★★★★</div>
+                    <p style="font-style: italic; color: #666; margin-bottom: 20px; line-height: 1.8;">"Best insurance company I've dealt with. Their claim process is transparent and fast. Got my claim settled in 24 hours."</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #0b4f8a 0%, #12a4d9 100%);"></div>
+                        <div>
+                            <div style="font-weight: bold; color: #1a1a1a;">Michael Chen</div>
+                            <div style="color: #999; font-size: 0.9rem;">Software Engineer</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-left: 4px solid #0b4f8a;">
+                    <div style="color: #ffa000; font-size: 2rem; margin-bottom: 15px;">★★★★★</div>
+                    <p style="font-style: italic; color: #666; margin-bottom: 20px; line-height: 1.8;">"Excellent customer service! They helped me find the perfect plan for my family. Very professional and caring team."</p>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #0b4f8a 0%, #12a4d9 100%);"></div>
+                        <div>
+                            <div style="font-weight: bold; color: #1a1a1a;">Emily Rodriguez</div>
+                            <div style="color: #999; font-size: 0.9rem;">Teacher</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div style="max-width: 800px; margin: 50px auto 0;">
+                <div style="background: white; padding: 25px 30px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform='translateX(0)'">
+                    <h3 style="color: #0b4f8a; margin-bottom: 10px; font-size: 1.2rem;">How quickly can I get coverage?</h3>
+                    <p style="color: #666; line-height: 1.7;">Most policies are activated within 24 hours of approval. Some plans offer instant coverage upon payment confirmation.</p>
+                </div>
+                <div style="background: white; padding: 25px 30px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform='translateX(0)'">
+                    <h3 style="color: #0b4f8a; margin-bottom: 10px; font-size: 1.2rem;">What documents do I need to apply?</h3>
+                    <p style="color: #666; line-height: 1.7;">You'll need a valid ID, proof of address, and basic health information. Our team will guide you through the entire process.</p>
+                </div>
+                <div style="background: white; padding: 25px 30px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform='translateX(0)'">
+                    <h3 style="color: #0b4f8a; margin-bottom: 10px; font-size: 1.2rem;">Can I cancel my policy anytime?</h3>
+                    <p style="color: #666; line-height: 1.7;">Yes, you can cancel anytime. We offer a 30-day money-back guarantee if you're not completely satisfied.</p>
+                </div>
+                <div style="background: white; padding: 25px 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform='translateX(0)'">
+                    <h3 style="color: #0b4f8a; margin-bottom: 10px; font-size: 1.2rem;">How do I file a claim?</h3>
+                    <p style="color: #666; line-height: 1.7;">File claims online through your dashboard, mobile app, or call our 24/7 helpline. Average claim settlement time is 24-48 hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Insurance Knowledge Hub</h2>
+            <p class="section-subtitle">Practical guidance to help families choose smarter coverage, avoid common mistakes, and reduce claim delays.</p>
+
+            <div class="rich-content-grid" style="margin-bottom: 34px;">
+                <div class="rich-card">
+                    <h3>Life Cover Planning</h3>
+                    <p>Use the 10x income rule as a baseline, then adjust for loans, education goals, and monthly expenses.</p>
+                    <ul class="rich-list">
+                        <li>Account for inflation over 15-20 years</li>
+                        <li>Keep nominee details updated yearly</li>
+                        <li>Review after major life events</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>Health Policy Optimization</h3>
+                    <p>Pick a base plan plus top-up for cost efficiency instead of buying one expensive slab directly.</p>
+                    <ul class="rich-list">
+                        <li>Check room-rent limits and co-pay</li>
+                        <li>Compare day-care procedure coverage</li>
+                        <li>Confirm waiting period clauses</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>Home Risk Checklist</h3>
+                    <p>Most claims fail due to documentation gaps. Keep purchase bills and asset photos safely archived.</p>
+                    <ul class="rich-list">
+                        <li>Store digital invoice copies in cloud</li>
+                        <li>Record yearly property condition photos</li>
+                        <li>Update high-value items list quarterly</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>Claim Readiness Score</h3>
+                    <p>Our advisors can pre-audit your policy documents so you can file claims with fewer back-and-forths.</p>
+                    <ul class="rich-list">
+                        <li>ID and address proof verified</li>
+                        <li>Medical records folder prepared</li>
+                        <li>Emergency contact mapped to policy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-band">
+                <h3 style="font-size: 1.7rem; margin-bottom: 10px;">Annual Coverage Review Program</h3>
+                <p style="margin-bottom: 12px; color: #4a5568;">Every policy year, our team runs a benefit-gap review to check whether your current coverage still matches your family responsibilities and financial goals.</p>
+                <p style="color: #4a5568;">This includes premium efficiency analysis, rider relevance checks, and claim-experience benchmarking against industry averages.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 data-translate="ctaTitle">Ready to Get Protected?</h2>
+            <p data-translate="ctaSubtitle">Join thousands of satisfied customers who trust us with their insurance needs</p>
+            <a href="pages/get-started.html" class="btn-primary btn-large" data-translate="getStartedNow">Get Started Now</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-translate="company">Company</h4>
+                    <ul>
+                        <li><a href="pages/about.html" data-translate="about">About Us</a></li>
+                        <li><a href="#" data-translate="careers">Careers</a></li>
+                        <li><a href="#" data-translate="press">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="products">Products</h4>
+                    <ul>
+                        <li><a href="#" data-translate="lifeInsurance">Life Insurance</a></li>
+                        <li><a href="#" data-translate="healthInsurance">Health Insurance</a></li>
+                        <li><a href="#" data-translate="autoInsurance">Auto Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="support">Support</h4>
+                    <ul>
+                        <li><a href="pages/contact.html" data-translate="contact">Contact</a></li>
+                        <li><a href="#" data-translate="faq">FAQ</a></li>
+                        <li><a href="#" data-translate="claims">Claims</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="legal">Legal</h4>
+                    <ul>
+                        <li><a href="#" data-translate="privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-translate="terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SecureLife Insurance. <span data-translate="rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

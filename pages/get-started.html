@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - SecureLife Insurance</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="nav-brand" href="../index.html" aria-label="Go to Home 1">
+                <img src="../images/logo.svg" alt="SecureLife Insurance" class="logo">
+                <span class="brand-name">SecureLife</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#">Home ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html" data-translate="about">About</a></li>
+                <li><a href="contact.html" data-translate="contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" data-translate="dashboard">Dashboard ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dashboard.html">User Dashboard</a></li>
+                        <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <a href="get-started.html" class="btn-primary active" data-translate="getStarted">Get Started</a>
+                <button class="lang-toggle" id="langToggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero page-hero quote-hero" style="background: linear-gradient(135deg, #15803d 0%, #166534 100%);">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-translate="getStartedTitle">Get Your Insurance Quote:</h1>
+                <p data-translate="getStartedDesc">Fill out the form below and we'll provide you with a personalized quote within minutes.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary" onclick="window.scrollTo({top: document.querySelector('.services').offsetTop - 80, behavior: 'smooth'}); return false;">Start Form</a>
+                    <a href="contact.html" class="btn-secondary">Need Help?</a>
+                </div>
+                <div class="hero-highlight-list">
+                    <span>Instant premium estimate</span>
+                    <span>No hidden processing fees</span>
+                    <span>Policy issued digitally</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../images/coverage-chart.svg" alt="Coverage Planning">
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="quote-form-card" style="max-width: 700px; margin: 0 auto; background: white; padding: 50px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
+                <form>
+                    <div class="form-group">
+                        <label data-translate="selectInsurance">Select Insurance Type</label>
+                        <select required>
+                            <option value="">Choose...</option>
+                            <option data-translate="lifeInsurance">Life Insurance</option>
+                            <option data-translate="healthInsurance">Health Insurance</option>
+                            <option data-translate="autoInsurance">Auto Insurance</option>
+                            <option data-translate="homeInsurance">Home Insurance</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="fullName">Full Name</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="email">Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="phone">Phone</label>
+                        <input type="tel" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="dateOfBirth">Date of Birth</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="coverageAmount">Coverage Amount</label>
+                        <select required>
+                            <option value="">Choose...</option>
+                            <option>$50,000</option>
+                            <option>$100,000</option>
+                            <option>$250,000</option>
+                            <option>$500,000</option>
+                            <option>$1,000,000</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary btn-large" style="width: 100%;" data-translate="submit">Get My Quote</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="infographic">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Instant Quotes</h3>
+                    <p>Get personalized quotes in minutes, not days</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Best Rates</h3>
+                    <p>Competitive pricing with no hidden fees</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Trusted Coverage</h3>
+                    <p>Comprehensive protection you can rely on</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Before You Submit</h2>
+            <p class="section-subtitle">These checks help you get more accurate quotes and reduce follow-up calls from underwriting teams.</p>
+
+            <div class="rich-content-grid" style="margin-bottom: 30px;">
+                <div class="rich-card">
+                    <h3>Document Readiness</h3>
+                    <ul class="rich-list">
+                        <li>Government ID and address proof</li>
+                        <li>Recent income declaration (if required)</li>
+                        <li>Medical history summary for health plans</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>Coverage Clarity</h3>
+                    <ul class="rich-list">
+                        <li>Define essential vs optional riders</li>
+                        <li>Set realistic claim expectation windows</li>
+                        <li>Compare deductible and co-pay impact</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>Premium Planning</h3>
+                    <ul class="rich-list">
+                        <li>Choose monthly or annual cashflow fit</li>
+                        <li>Review long-term affordability horizon</li>
+                        <li>Avoid underinsuring for low premiums</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>Nominee Setup</h3>
+                    <ul class="rich-list">
+                        <li>Add primary and backup nominee</li>
+                        <li>Verify contact details for claim notice</li>
+                        <li>Update nominee after life events</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-band">
+                <h3 style="font-size: 1.6rem; margin-bottom: 10px;">Quote-to-Coverage Journey</h3>
+                <p style="color: #4a5568; margin-bottom: 8px;">Step 1: Application review. Step 2: Risk assessment. Step 3: Final quote and confirmation. Step 4: Policy issuance and digital vault activation.</p>
+                <p style="color: #4a5568;">Typical completion time ranges from same day to 72 hours, depending on insurance type and documentation quality.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-translate="company">Company</h4>
+                    <ul>
+                        <li><a href="about.html" data-translate="about">About Us</a></li>
+                        <li><a href="#" data-translate="careers">Careers</a></li>
+                        <li><a href="#" data-translate="press">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="products">Products</h4>
+                    <ul>
+                        <li><a href="#" data-translate="lifeInsurance">Life Insurance</a></li>
+                        <li><a href="#" data-translate="healthInsurance">Health Insurance</a></li>
+                        <li><a href="#" data-translate="autoInsurance">Auto Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="support">Support</h4>
+                    <ul>
+                        <li><a href="contact.html" data-translate="contact">Contact</a></li>
+                        <li><a href="#" data-translate="faq">FAQ</a></li>
+                        <li><a href="#" data-translate="claims">Claims</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="legal">Legal</h4>
+                    <ul>
+                        <li><a href="#" data-translate="privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-translate="terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SecureLife Insurance. <span data-translate="rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

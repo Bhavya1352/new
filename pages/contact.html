@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SecureLife Insurance</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="nav-brand" href="../index.html" aria-label="Go to Home 1">
+                <img src="../images/logo.svg" alt="SecureLife Insurance" class="logo">
+                <span class="brand-name">SecureLife</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#">Home ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../index.html">Home 1</a></li>
+                        <li><a href="home2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html" data-translate="about">About</a></li>
+                <li><a href="contact.html" class="active" data-translate="contact">Contact</a></li>
+                <li class="dropdown">
+                    <a href="#" data-translate="dashboard">Dashboard ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dashboard.html">User Dashboard</a></li>
+                        <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-controls">
+                <a href="get-started.html" class="btn-primary" data-translate="getStarted">Get Started</a>
+                <button class="lang-toggle" id="langToggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero page-hero contact-hero" style="background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-translate="contactTitle">Get in Touch!</h1>
+                <p data-translate="contactDesc">Have questions? We're here to help. Reach out to our team.</p>
+                <div class="hero-buttons">
+                    <a href="get-started.html" class="btn-primary">Request Callback</a>
+                    <a href="dashboard.html" class="btn-secondary">Track Existing Query</a>
+                </div>
+                <div class="hero-highlight-list">
+                    <span>24/7 emergency support line</span>
+                    <span>2-hour average response</span>
+                    <span>Dedicated claims escalation desk</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../images/support-247.svg" alt="24x7 Support">
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-panel">
+                    <h2 style="margin-bottom: 1.2rem;">Contact Information</h2>
+                    <div style="display: flex; flex-direction: column; gap: 22px;">
+                        <div style="display: flex; gap: 16px; align-items: start;">
+                            <div style="font-size: 1.7rem;">📍</div>
+                            <div>
+                                <h3 data-translate="address">Address</h3>
+                                <p data-translate="addressValue">123 Insurance Ave, New York, NY 10001</p>
+                                <p style="color: #666; font-size: 0.92rem;">Mon-Sat: 9:00 AM to 8:00 PM for in-person assistance.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 16px; align-items: start;">
+                            <div style="font-size: 1.7rem;">📞</div>
+                            <div>
+                                <h3 data-translate="phone">Phone</h3>
+                                <p data-translate="phoneValue">+1 (555) 123-4567</p>
+                                <p style="color: #666; font-size: 0.92rem;">Emergency line available 24/7 for active policyholders.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 16px; align-items: start;">
+                            <div style="font-size: 1.7rem;">✉️</div>
+                            <div>
+                                <h3 data-translate="email">Email</h3>
+                                <p data-translate="emailValue">support@securelife.com</p>
+                                <p style="color: #666; font-size: 0.92rem;">Average email response time: under 2 business hours.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 24px;">Support Windows</h3>
+                    <ul>
+                        <li>Policy Support: 8:00 AM to 10:00 PM</li>
+                        <li>Claim Updates: 24/7 dashboard tracking</li>
+                        <li>Renewal Desk: Mon-Fri, 9:00 AM to 7:00 PM</li>
+                        <li>Escalation Team: Same-day callback commitment</li>
+                    </ul>
+                </div>
+
+                <div class="contact-panel">
+                    <h2 style="margin-bottom: 1rem;">Send Us a Message</h2>
+                    <p style="color: #666; margin-bottom: 1.4rem;">Tell us your policy type and query details so we can assign the right specialist quickly.</p>
+                    <form>
+                        <div class="form-group">
+                            <label data-translate="name">Name</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-translate="email">Email</label>
+                            <input type="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-translate="phone">Phone</label>
+                            <input type="tel" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Policy Type</label>
+                            <select required>
+                                <option value="">Select policy type</option>
+                                <option>Life Insurance</option>
+                                <option>Health Insurance</option>
+                                <option>Auto Insurance</option>
+                                <option>Home Insurance</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label data-translate="message">Message</label>
+                            <textarea required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary" style="width: 100%;" data-translate="send">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="infographic" style="padding-top: 70px;">
+        <div class="container">
+            <h2 class="section-title">How We Help You Faster</h2>
+            <p class="section-subtitle">Dedicated service lanes so your request reaches the right team without delays.</p>
+            <div class="contact-highlights">
+                <div class="contact-highlight">
+                    <h3>Claims Priority Desk</h3>
+                    <p>Urgent claim incidents are routed to a fast-response queue with live status tracking.</p>
+                </div>
+                <div class="contact-highlight">
+                    <h3>Renewal Assistance Team</h3>
+                    <p>Experts review your plan, suggest coverage upgrades, and prevent accidental policy lapses.</p>
+                </div>
+                <div class="contact-highlight">
+                    <h3>Document Support Cell</h3>
+                    <p>Need help with missing files? We guide uploads and verification in clear step-by-step format.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Regional Support Network</h2>
+            <p class="section-subtitle">Choose your nearest support channel for faster on-ground coordination during inspections and claim processing.</p>
+
+            <div class="rich-content-grid" style="margin-bottom: 28px;">
+                <div class="rich-card">
+                    <h3>North Zone Help Center</h3>
+                    <p>Specialized in health and motor claim coordination with dedicated weekend callback support.</p>
+                    <ul class="rich-list">
+                        <li>Turnaround target: under 24 hrs</li>
+                        <li>Priority emergency intake desk</li>
+                        <li>Hospital liaison escalation support</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>West Zone Corporate Desk</h3>
+                    <p>Focused on group policy servicing, renewals, and employee enrollment support for organizations.</p>
+                    <ul class="rich-list">
+                        <li>Bulk documentation handling</li>
+                        <li>Quarterly claim analytics</li>
+                        <li>Manager-level service reviews</li>
+                    </ul>
+                </div>
+                <div class="rich-card">
+                    <h3>South Zone Property Cell</h3>
+                    <p>Assists home and asset-related claims with survey scheduling and restoration partner coordination.</p>
+                    <ul class="rich-list">
+                        <li>Rapid survey appointment slotting</li>
+                        <li>Repair vendor verification support</li>
+                        <li>Damage documentation checklist</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-band">
+                <h3 style="font-size: 1.6rem; margin-bottom: 10px;">Need Immediate Assistance?</h3>
+                <p style="color: #4a5568;">For active emergencies, call our helpline and select priority routing. Your ticket is instantly tagged, and a specialist callback is initiated with live tracking on your dashboard.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 data-translate="company">Company</h4>
+                    <ul>
+                        <li><a href="about.html" data-translate="about">About Us</a></li>
+                        <li><a href="#" data-translate="careers">Careers</a></li>
+                        <li><a href="#" data-translate="press">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="products">Products</h4>
+                    <ul>
+                        <li><a href="#" data-translate="lifeInsurance">Life Insurance</a></li>
+                        <li><a href="#" data-translate="healthInsurance">Health Insurance</a></li>
+                        <li><a href="#" data-translate="autoInsurance">Auto Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="support">Support</h4>
+                    <ul>
+                        <li><a href="contact.html" data-translate="contact">Contact</a></li>
+                        <li><a href="#" data-translate="faq">FAQ</a></li>
+                        <li><a href="#" data-translate="claims">Claims</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 data-translate="legal">Legal</h4>
+                    <ul>
+                        <li><a href="#" data-translate="privacy">Privacy Policy</a></li>
+                        <li><a href="#" data-translate="terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SecureLife Insurance. <span data-translate="rights">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
